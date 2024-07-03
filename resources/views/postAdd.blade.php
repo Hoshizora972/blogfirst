@@ -8,18 +8,18 @@
 	<div class="sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
 		<div class="text-center">
 			<h2 class="mt-5 text-3xl font-bold text-gray-900">
-				File Upload!
+				Add a new post!
 			</h2>
-			<p class="mt-2 text-sm text-gray-400">Lorem ipsum is placeholder text.</p>
+			<p class="mt-2 text-sm text-gray-400">Please enter your content below.</p>
 		</div>
         <form class="mt-8 space-y-3" action="{{route('postStore')}}" method="post">
                     <div class="grid grid-cols-1 space-y-2">
                         <label class="text-sm font-bold text-gray-500 tracking-wide">Title</label>
-                            <input class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="" placeholder="mail@gmail.com">
+                            <input class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="" placeholder="Enter a text...">
                     </div>
                     <div class="grid grid-cols-1 space-y-2">
                         <label class="text-sm font-bold text-gray-500 tracking-wide">Content</label>
-                            <input class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="" placeholder="mail@gmail.com">
+                        <textarea  class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="textarea" placeholder="Enter a description..."></textarea> 
                     </div>
                     <div class="grid grid-cols-1 space-y-2">
                                     <label class="text-sm font-bold text-gray-500 tracking-wide">Attach Document</label>
