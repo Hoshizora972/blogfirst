@@ -16,6 +16,17 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('publication')" :active="request()->routeIs('publication')">
+                        {{ __('Publication') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('postCreate')" :active="request()->routeIs('postCreate')">
+                        {{ __('Add a new post') }}
+                    </x-nav-link>
+                </div>
+            
             </div>
 
             <!-- Settings Dropdown -->
