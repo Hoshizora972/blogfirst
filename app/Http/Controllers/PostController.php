@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -9,14 +10,16 @@ class PostController extends Controller
 {
     public function index(){
 
-        $posts=Post::all();
+        $posts=Post::paginate(4);;
             return view('index',compact('posts'));
     }
 
-    public function show()
+    public function show(Post $post)
     {
-        $rowPost = Post::findOrFail();
-            return view ('show',compact('rowPost'));
+        $comments= Comment::where('post_id',$post->post_id);
+        return view ('show',compact('comments','post'));
+        // $rowPost = Post::findOrFail();
+        //     return view ('show',compact('rowPost'));
     }
 
     public function store(Request $request, Post $post){
@@ -32,8 +35,8 @@ class PostController extends Controller
 
             'user_id'=>auth()->id(),
         ]);
-
-        return redirect()->route('show', $post->id)->with('sucess','Le post à ajouté avec succès.');
+        $post->save();
+        return to_route('publication')->with('sucess','Le post à ajouté avec succès.');
         
     } 
         public function create(){

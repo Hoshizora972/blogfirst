@@ -26,7 +26,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/publication', [PostController::class, 'index'])->name('publication');
-Route::get('/show',[PostController::class,'show'])->name('show');
+Route::get('/show/{post}',[PostController::class,'show'])->name('show');
+
 Route::middleware('auth')->group(function () {
     Route::get('/post/', [PostController::class, 'create'])->name('postCreate');
     Route::post('/posts/', [PostController::class, 'store'])->name('postStore');
